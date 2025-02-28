@@ -1,35 +1,39 @@
+# Santander dev-week-2023
+
+JPA RESTful API criada pra dev week
+
 classDiagram
-  class User {
-    -String name
-    -Account account
-    -Feature[] features
-    -Card card
-    -News[] news
-  }
+    class Usuario {
+        -String nome
+        -Conta conta
+        -Recurso[] recursos
+        -Cartao cartao
+        -Noticias[] noticias
+    }
 
-  class Account {
-    -String number
-    -String agency
-    -Number balance
-    -Number limit
-  }
+    class Conta {
+        -String numero
+        -String agencia
+        -Numero saldo
+        -Numero limite
+    }
 
-  class Feature {
-    -String icon
-    -String description
-  }
+    class Feature {
+        -String icone
+        -String descricao
+    }
 
-  class Card {
-    -String number
-    -Number limit
-  }
+    class Cartao {
+        -String numero
+        -Numero limite
+    }
 
-  class News {
-    -String icon
-    -String description
-  }
+    class Noticias {
+        -String icone
+        -String descricao
+    }
 
-  User "1" *-- "1" Account
-  User "1" *-- "N" Feature
-  User "1" *-- "1" Card
-  User "1" *-- "N" News
+    Usuario "1" *-- "1" Conta
+    Usuario "1" *-- "N" Recurso
+    Usuario "1" *-- "1" Cartao
+    Usuario "1" *-- "N" Noticias
